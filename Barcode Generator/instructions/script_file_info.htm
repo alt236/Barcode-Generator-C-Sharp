@@ -1,0 +1,284 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta name="generator" content=
+    "HTML Tidy for Windows (vers 14 February 2006), see www.w3.org">
+    <style type="text/css">
+    BODY
+           {
+                        font-family:sans-serif;
+           }
+        A:link{color:blue}
+        A:visited{color:red}
+    </style>
+    <title></title>
+  </head>
+  <body lang="EN-GB">
+    <div>
+      <p>
+        <b><span style='font-size:14.0pt;'>Introduction</span></b>
+      </p>This is document contains an explanation of the Barcode Script format
+      to be used with the BarcodeGenerator application which can be found here:
+      <a href=
+      "http://aschillings.co.uk/html/barcode_generator.html" target="_blank">http://aschillings.co.uk/html/barcode_generator.html</a>
+      <p>
+        <b><span style='font-size:14.0pt;'>Notes</span></b>
+      </p>
+      <p>
+        Things to keep in mind:
+      </p>
+      <ul>
+        <li>The barcode script file is a <u>tab separated</u> plain text file
+        (i.e. fields are separated by the tab character).
+        </li>
+        <li>The first line of the file must always be "BarcodeGenerator".
+        </li>
+        <li>If a line starts with "#" it will be treated as a comment and it
+        will not be parsed.
+        </li>
+      </ul>
+      <p>
+        <b><span style='font-size:14.0pt;line-height:115%'>File Format:
+        Options</span></b>
+      </p>
+      <p>
+        Options are written in the following format:
+      </p>
+      <table border="1" cellspacing="0" cellpadding="0" style=
+      'border-collapse:collapse;border:none'>
+        <tr>
+          <td width="616" valign="top" style=
+          'width:462.1pt;border:solid windowtext 1.0pt; background:#F2F2F2;padding:0cm 5.4pt 0cm 5.4pt'>
+          <p style=
+          'margin-bottom:0cm;margin-bottom:.0001pt;line-height: normal'>
+              <span style=
+              'font-family:"Courier New"'>bcg_option&lt;TAB&gt;[option_name]&lt;TAB&gt;[option_value]</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        The start of the line must always be "bcg_option" (bcg stands for
+        BarCodeGenerator).
+      </p>
+      <p>
+        Valid option names are the following:
+      </p>
+      <table border="1" cellspacing="0" cellpadding="0" style=
+      'border-collapse:collapse;border:none'>
+        <tr>
+          <td width="94" valign="top" style=
+          'width:70.3pt;border:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+              bc_prefix
+          </td>
+          <td width="433" valign="top" style=
+          'width:324.95pt;border:solid windowtext 1.0pt; border-left:none;padding:0cm 5.4pt 0cm 5.4pt'>
+          A string which will be prefixed to the barcode text
+          </td>
+        </tr>
+        <tr>
+          <td width="94" valign="top" style=
+          'width:70.3pt;border:solid windowtext 1.0pt; border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+              bc_suffix
+          </td>
+          <td width="433" valign="top" style=
+          'width:324.95pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+          A string which will be suffixed to the barcode text
+          </td>
+        </tr>
+        <tr>
+          <td width="94" valign="top" style=
+          'width:70.3pt;border:solid windowtext 1.0pt; border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+              bc_width
+          </td>
+          <td width="433" valign="top" style=
+          'width:324.95pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+          The width of the barcode in pixels
+          </td>
+        </tr>
+        <tr>
+          <td width="94" valign="top" style=
+          'width:70.3pt;border:solid windowtext 1.0pt; border-top:none;padding:0cm 5.4pt 0cm 5.4pt'>
+              bc_height
+          </td>
+          <td width="433" valign="top" style=
+          'width:324.95pt;border-top:none;border-left: none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+          The height of the barcode in pixels
+          </td>
+        </tr>
+      </table>
+      <p>
+        Options can be changed at will through the file. For example the file
+        might start with a bc_width of 200 and after a few barcodes it can be
+        changed to a bc_width of 300 (see example below).
+      </p>
+      <p>
+        If you need to remove a value, for example to remove a prefix/suffix,
+        do not type anything after the second tab:
+      </p>
+      <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0"
+      style='background:#F2F2F2;border-collapse:collapse;border:none'>
+        <tr>
+          <td width="616" valign="top" style=
+          'width:462.1pt;border:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+          <p style=
+          'margin-bottom:0cm;margin-bottom:.0001pt;line-height: normal'>
+              <span style=
+              'font-family:"Courier New"'>bcg_option&lt;TAB&gt;bc_prefix&lt;TAB&gt;</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <b><span style='font-size:14.0pt;line-height:115%'>File Format: Barcode
+        Lines</span></b>
+      </p>
+      <p>
+        Barcode lines are written in the following format:
+      </p>
+      <table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0"
+      style='background:#F2F2F2;border-collapse:collapse;border:none'>
+        <tr>
+          <td width="616" valign="top" style=
+          'width:462.1pt;border:solid windowtext 1.0pt; padding:0cm 5.4pt 0cm 5.4pt'>
+          <p style=
+          'margin-bottom:0cm;margin-bottom:.0001pt;line-height: normal'>
+              <span style=
+              'font-family:"Courier New"'>&lt;barcode_text&gt;&lt;TAB&gt;&lt;barcode_filename&gt;</span>
+            </p>
+          </td>
+        </tr>
+      </table>
+      <p>
+        <span style=
+        'line-height:115%;font-family: "Courier New"'>&lt;barcode_text&gt;</span>
+        <span style='font-size:10.0pt; line-height:115%'>is the text the
+        barcode will contain (which will be automatically prefixed and/or
+        suffixed by the text declared using the "bc_prefix" and "bc_suffix"
+        options if applicable</span>.
+      </p>
+      <p>
+        <span style=
+        'font-size:10.0pt;line-height:115%;font-family: "Courier New"'>&lt;
+        barcode_filename&gt;</span> <span style=
+        'font-size:10.0pt; line-height:115%'>is the name  the barcode will be
+        saved as.</span>
+      </p>
+      <p>
+        <b><span style='font-size:14.0pt;'>File Format: Example</span></b>
+      </p>
+      <p>
+        The following is a sample barcode script file.
+      </p>
+      <table border="1" cellspacing="0" cellpadding="0" style=
+      'background:#F2F2F2;border-collapse:collapse;border:none'>
+        <tr>
+          <td width="100%" valign="top" haligh="left">
+            <p style=
+            'margin-bottom:0cm;margin-bottom:.0001pt;line-height: normal'></p>
+            <pre>
+<span style='font-family:"Courier New"'>BarcodeGenerator
+#
+#The following lines are options
+#
+bcg_option	bc_prefix	market://search?q=pname:
+bcg_option	bc_suffix	
+bcg_option	bc_width	200
+bcg_option	bc_height	200
+#
+#The barcode lines begin now
+#
+aws.apps.androidDrawables	qrcode_android_drawables.png
+aws.apps.hex2bin	qrcode_android_hex2bin.png
+aws.apps.keyeventdisplay	qrcode_android_keyeventdisplay.png
+aws.apps.netPortDb	qrcode_android_networkportdb.png
+aws.apps.networkInfo	qrcode_android_networkinfo.png
+aws.apps.networkInfo_D	qrcode_android_networkinfo_d.png
+aws.apps.networkInfoIi	qrcode_android_networkInfoii.png
+aws.apps.networkInfoIi_D	qrcode_android_networkinfoii_D.png
+aws.apps.ouiDb	qrcode_android_ouidb.png
+aws.apps.pciVenDevDb	qrcode_android_pcivendevdb.png
+aws.apps.underthehood	qrcode_android_underthehood.png
+aws.apps.usbVenDevDb	qrcode_android_usbvendevdb.png
+aws.apps.wifiKeyRecovery	qrcode_android_wifikeyrecovery.png
+#
+#Changing the barcode size:
+#
+bcg_option	bc_width	400
+bcg_option	bc_height	400
+#
+aws.apps.androidDrawables	qrcode_android_drawables_400.png
+aws.apps.hex2bin	qrcode_android_hex2bin_400.png
+#
+#Adding a suffix:
+#
+bcg_option	bc_suffix	this_is_my_suffix_text!
+#
+aws.apps.androidDrawables	qrcode_android_drawables_400_suffix.png
+aws.apps.hex2bin	qrcode_android_hex2bin_400_suffix.png
+#
+#Changing the size again, and removing the suffix. Keep in mind that
+#there is a tab after the "bc_suffix".
+#
+bcg_option	bc_width	100
+bcg_option	bc_height	100
+bcg_option	bc_suffix	
+#
+aws.apps.androidDrawables	qrcode_android_drawables_100.png
+aws.apps.hex2bin	qrcode_android_hex2bin_100.pngBarcodeGenerator
+#
+#The following lines are options
+#
+bcg_option	bc_prefix	market://search?q=pname:
+bcg_option	bc_suffix	
+bcg_option	bc_width	200
+bcg_option	bc_height	200
+#
+#The barcode lines begin now
+#
+aws.apps.androidDrawables	qrcode_android_drawables.png
+aws.apps.hex2bin	qrcode_android_hex2bin.png
+aws.apps.keyeventdisplay	qrcode_android_keyeventdisplay.png
+aws.apps.netPortDb	qrcode_android_networkportdb.png
+aws.apps.networkInfo	qrcode_android_networkinfo.png
+aws.apps.networkInfo_D	qrcode_android_networkinfo_d.png
+aws.apps.networkInfoIi	qrcode_android_networkInfoii.png
+aws.apps.networkInfoIi_D	qrcode_android_networkinfoii_D.png
+aws.apps.ouiDb	qrcode_android_ouidb.png
+aws.apps.pciVenDevDb	qrcode_android_pcivendevdb.png
+aws.apps.underthehood	qrcode_android_underthehood.png
+aws.apps.usbVenDevDb	qrcode_android_usbvendevdb.png
+aws.apps.wifiKeyRecovery	qrcode_android_wifikeyrecovery.png
+#
+#Changing the barcode size:
+#
+bcg_option	bc_width	400
+bcg_option	bc_height	400
+#
+aws.apps.androidDrawables	qrcode_android_drawables_400.png
+aws.apps.hex2bin	qrcode_android_hex2bin_400.png
+#
+#Adding a suffix:
+#
+bcg_option	bc_suffix	this_is_my_suffix_text!
+#
+aws.apps.androidDrawables	qrcode_android_drawables_400_suffix.png
+aws.apps.hex2bin	qrcode_android_hex2bin_400_suffix.png
+#
+#Changing the size again, and removing the suffix. Keep in mind that
+#there is a tab after the "bc_suffix".
+#
+bcg_option	bc_width	100
+bcg_option	bc_height	100
+bcg_option	bc_suffix	
+#
+aws.apps.androidDrawables	qrcode_android_drawables_100.png
+aws.apps.hex2bin	qrcode_android_hex2bin_100.png
+                        </span>
+</pre>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

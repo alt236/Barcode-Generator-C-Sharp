@@ -1,0 +1,23 @@
+BarcodeGenerator
+#
+#The following lines are options
+#
+bcg_option	bc_prefix	market://search?q=pname:
+bcg_option	bc_suffix	
+bcg_option	bc_width	200
+bcg_option	bc_height	200
+#
+#The barcode lines begin now
+#
+aws.apps.androidDrawables	qrcode_android_drawables.png
+aws.apps.hex2bin	qrcode_android_hex2bin.png
+aws.apps.ouiDb	qrcode_android_ouidb.png
+aws.apps.networkInfo	qrcode_android_networkinfo.png
+aws.apps.networkInfo_D	qrcode_android_networkinfo_d.png
+aws.apps.networkInfoIi	qrcode_android_networkInfoii.png
+aws.apps.networkInfoIi_D	qrcode_android_networkinfoii_D.png
+aws.apps.pciVenDevDb	qrcode_android_pcivendevdb.png
+aws.apps.underthehood	qrcode_android_underthehood.png
+aws.apps.keyeventdisplay	qrcode_android_keyeventdisplay.png
+aws.apps.wifiKeyRecovery	qrcode_android_wifikeyrecovery.png
+aws.apps.usbVenDevDb	qrcode_android_usbvendevdb.png
